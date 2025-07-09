@@ -26,7 +26,7 @@ function App() {
         <Route path='/my-bookings' element={<MyBookings/>}/>
         <Route path='/favorite' element={<Favorite/>}/>
       </Routes>
-      <Footer/>
+      {!isAdminRoute && <Footer/>}
     </>
   )
 }

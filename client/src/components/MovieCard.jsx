@@ -1,6 +1,7 @@
 import { StarIcon } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import timeFormat from "../lib/timeFormat";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const MovieCard = ({ movie }) => {
             navigate(`/movies/${movie._id}`);
             scrollTo(0, 0);
           }}
-          src="{movie.backdrop_path}"
+          src={movie.backdrop_path}
           alt=""
           className="rounded-lg h-52 w-full object-cover object-right-bottom cursor-pointer"
         />
@@ -25,7 +26,7 @@ const MovieCard = ({ movie }) => {
             .slice(0, 2)
             .map((genre) => genre.name)
             .join(" | ")}{" "}
-          | {movie.runtime}
+          | {timeFormat(movie.runtime)}
         </p>
 
         <div className="flex items-center justify-between mt-4 pb-3">
