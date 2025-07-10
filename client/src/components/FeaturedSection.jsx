@@ -24,7 +24,7 @@ const FeaturedSection = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8">
-        {dummyShowsData.slice(0,8).map((show) => (
+        {dummyShowsData.slice(0,4).map((show) => (
           <MovieCard key={show._id} movie={show}/>
         ))}
       </div>
